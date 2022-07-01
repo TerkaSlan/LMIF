@@ -1,0 +1,85 @@
+level-0:
+  model: MultilabelNN
+  epochs: 10
+  learning_rate: 0.0001
+  optimizer: adam
+  loss: 'categorical_crossentropy'
+  hidden_layers:
+    dense:
+      - units: 282
+        activation: relu
+        dropout: null
+      - units: 1024
+        activation: relu
+        dropout: null
+      - units: 256
+        activation: relu
+        dropout: null
+level-1:
+  model: MultilabelNN
+  epochs: 1
+  learning_rate: 0.0001
+  optimizer: adam
+  loss: 'categorical_crossentropy'
+  hidden_layers:
+    dense:
+      - units: 282
+        activation: relu
+        dropout: null
+      - units: 1024
+        activation: relu
+        dropout: null
+      - units: 256
+        activation: relu
+        dropout: null
+level-2:
+  model: MultilabelNN
+  epochs: 1
+  learning_rate: 0.0001
+  optimizer: adam
+  loss: 'categorical_crossentropy'
+  hidden_layers:
+    dense:
+      - units: 282
+        activation: relu
+        dropout: null
+      - units: 1024
+        activation: relu
+        dropout: null
+      - units: 256
+        activation: relu
+        dropout: null
+level-3:
+  model: MultilabelNN
+  epochs: 1
+  learning_rate: 0.0001
+  optimizer: adam
+  loss: 'categorical_crossentropy'
+  hidden_layers:
+    dense:
+      - units: 282
+        activation: relu
+        dropout: null
+      - units: 1024
+        activation: relu
+        dropout: null
+      - units: 256
+        activation: relu
+        dropout: null
+level-4:
+  model: MultilabelNN
+  epochs: 1
+  learning_rate: 0.0001
+  optimizer: adam
+  loss: 'categorical_crossentropy'
+  hidden_layers:
+    dense:
+      - units: 282
+        activation: relu
+        dropout: null
+      - units: 1024
+        activation: relu
+        dropout: null
+      - units: 256
+        activation: relu
+        dropout: null

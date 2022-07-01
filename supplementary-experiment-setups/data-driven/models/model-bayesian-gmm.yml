@@ -1,0 +1,14 @@
+level-0:
+  model: BayesianGMM
+  n_components: 100
+  covariance_type: 'spherical'
+  max_iter: 2
+  init_params: 'kmeans'
+  weight_concentration_prior_type: 'dirichlet_process'
+level-1:
+  model: BayesianGMM
+  n_components: 100
+  covariance_type: 'spherical'
+  max_iter: 2
+  init_params: 'kmeans'
+  weight_concentration_prior_type: 'dirichlet_process'

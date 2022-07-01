@@ -1,0 +1,75 @@
+{
+    "experiment": "/storage/brno2/home/tslaninakova/exp/learned-indexes-repro/outputs/Profiset-1M-Mtree-200-NN--2022-05-23--08-28-33",
+    "stop_conditions_perc": [
+        0.05,
+        0.1,
+        0.3,
+        0.5,
+        1.0,
+        5.0,
+        10.0,
+        20.0,
+        30.0,
+        50.0
+    ],
+    "results": {
+        "500": {
+            "time": 0.24962657690048218,
+            "score": 0.1074999999999997,
+            "visited_objects": 1728
+        },
+        "1000": {
+            "time": 0.288388347864151,
+            "score": 0.12809999999999971,
+            "visited_objects": 2338
+        },
+        "3000": {
+            "time": 0.42552739310264587,
+            "score": 0.18156666666666574,
+            "visited_objects": 4381
+        },
+        "5000": {
+            "time": 0.5499050517082215,
+            "score": 0.22063333333333213,
+            "visited_objects": 6186
+        },
+        "10000": {
+            "time": 0.9123048899173737,
+            "score": 0.29893333333333294,
+            "visited_objects": 11083
+        },
+        "50000": {
+            "time": 5.346343848466873,
+            "score": 0.5550333333333325,
+            "visited_objects": 50786
+        },
+        "100000": {
+            "time": 13.785194943666458,
+            "score": 0.6752666666666663,
+            "visited_objects": 100553
+        },
+        "200000": {
+            "time": 36.12730839323997,
+            "score": 0.7885333333333314,
+            "visited_objects": 200519
+        },
+        "300000": {
+            "time": 63.38366202378273,
+            "score": 0.8480333333333306,
+            "visited_objects": 300423
+        },
+        "500000": {
+            "time": 124.43778199911118,
+            "score": 0.9177666666666643,
+            "visited_objects": 500381
+        }
+    },
+    "hw_info": {
+        "mem_data_load": 10526.80859375,
+        "mem_train": 130742.4140625,
+        "mem_exp": 5975.51953125,
+        "cpu_brand": "Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz",
+        "cpu_hz": "2.1000 GHz",
+        "cpu_arch": "X86_64"
+    }
+}

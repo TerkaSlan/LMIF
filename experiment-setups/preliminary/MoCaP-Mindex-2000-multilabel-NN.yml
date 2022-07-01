@@ -1,0 +1,28 @@
+LMI:
+  model-config: experiment-setups/preliminary/models/MoCaP-Mindex-2000-multilabel-NN-model.yml
+  training-dataset-percentage: 1
+data:
+  data-dir: data/
+  dataset: MOCAP
+  dataset-size: 1M
+  normalize: true
+  original:
+    index: MINDEX
+    leaf-node-capacity: 2000
+  shuffle: true
+  shuffle-seed: 1
+experiment:
+  gt-subdir: ground-truths
+  knns: 30
+  output-dir: outputs
+  queries-out-of-dataset: false
+  search-stop-conditions:
+  - 0.001
+  - 0.0028
+  - 0.00857
+  - 0.005
+  - 0.01428
+  - 0.02857
+  - 0.142857
+  - 0.2857
+setup: exp-preliminary

@@ -1,0 +1,13 @@
+Untitled.ipynb
+.ipynb_checkpoints
+__pycache__/
+.vscode/
+*.e*
+*.o*
+outputs*/*
+logs/
+scripts/generated-scripts/*
+*.sh
+repro-exps*
+test*
+*.zip

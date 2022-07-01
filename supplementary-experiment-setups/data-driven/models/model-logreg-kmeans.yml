@@ -1,0 +1,20 @@
+level-0:
+  cluster:
+    model: FaissKMeans
+    k: 100
+    nredo: 5
+    niter: 5
+  search:
+    max_iter: 5
+    model: LogReg
+    C: 10_000
+level-1:
+  cluster:
+    model: FaissKMeans
+    k: 100
+    nredo: 5
+    niter: 10
+  search:
+    max_iter: 5
+    model: LogReg
+    C: 10_000

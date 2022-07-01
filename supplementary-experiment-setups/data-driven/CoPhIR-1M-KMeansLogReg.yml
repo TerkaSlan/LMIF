@@ -1,0 +1,25 @@
+# Setup
+setup: exp-data-driven
+
+# Data
+data:
+  data-dir: data/
+  dataset: COPHIR
+  # `100k` or `1M`
+  dataset-size: 1M
+  normalize: True
+  shuffle: True
+  shuffle-seed: 1
+LMI:
+  model-config: supplementary-experiment-setups/data-driven/models/model-logreg-kmeans.yml
+  training-dataset-percentage: 1
+  n_levels: 2
+
+## Experiment log dirs
+experiment:
+  gt-subdir: ground-truths
+  output-dir: outputs
+  # defined as the percentages of the dataset size (1 being 100%)
+  search-stop-conditions: [0.0005, 0.001, 0.003, 0.005, 0.01, 0.05, 0.1, 0.2, 0.3, 0.5]
+  knns: 30
+  queries-out-of-dataset: False

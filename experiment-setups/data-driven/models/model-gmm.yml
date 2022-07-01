@@ -1,0 +1,12 @@
+level-0:
+  model: GMM
+  n_components: 100
+  covariance_type: 'spherical'
+  max_iter: 5
+  init_params: 'kmeans'
+level-1:
+  model: GMM
+  n_components: 100
+  covariance_type: 'spherical'
+  max_iter: 5
+  init_params: 'kmeans'

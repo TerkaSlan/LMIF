@@ -1,0 +1,17 @@
+image: "python:3.6"
+
+before_script:
+  - python --version
+  - pip install -r requirements-ci.txt
+
+stages:
+  - Static Analysis
+  - Test
+
+flake8:
+  stage: Static Analysis
+  script:
+  - flake8 --max-line-length=120 --max-complexity 12 *.py
+  - flake8 --max-line-length=120 --max-complexity 12 **/*.py
+  - flake8 --max-line-length=120 --max-complexity 12 **/**/*.py
+

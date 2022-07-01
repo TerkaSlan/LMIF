@@ -1,0 +1,40 @@
+level-0:
+  model: KMeans
+  n_clusters: 100
+  n_init: 5
+  max_iter: 10
+level-1:
+  model: KMeans
+  n_clusters: 100
+  n_init: 5
+  max_iter: 10
+level-2:
+  model: KMeans
+  n_clusters: 15
+  n_init: 5
+  max_iter: 10
+level-3:
+  model: KMeans
+  n_clusters: 30
+  n_init: 5
+  max_iter: 10
+level-4:
+  model: KMeans
+  n_clusters: 30
+  n_init: 5
+  max_iter: 10
+level-5:
+  model: KMeans
+  n_clusters: 30
+  n_init: 5
+  max_iter: 10
+level-6:
+  model: KMeans
+  n_clusters: 30
+  n_init: 5
+  max_iter: 10
+level-7:
+  model: KMeans
+  n_clusters: 30
+  n_init: 5
+  max_iter: 10

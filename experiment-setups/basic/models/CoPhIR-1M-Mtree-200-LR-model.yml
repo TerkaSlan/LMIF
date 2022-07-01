@@ -1,0 +1,18 @@
+level-0:
+  max_iter: 10
+  C: 10_000
+  model: LogReg
+  single-point-node: DecisionTree
+  class_weights: True
+level-1:
+  max_iter: 10
+  C: 10_000
+  model: LogReg
+  single-point-node: DecisionTree
+  class_weights: True
+level-2:
+  max_iter: 5
+  C: 10_000
+  model: LogReg
+  single-point-node: DecisionTree
+  class_weights: True

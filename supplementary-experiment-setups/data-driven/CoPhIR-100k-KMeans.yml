@@ -1,0 +1,27 @@
+# Setup
+setup: lmi-construction
+
+# Data
+data:
+  data-dir: data/
+  dataset: COPHIR
+  # `100k` or `1M`
+  dataset-size: 100k
+  # Used only in Supervised LMI (based on an original index)
+  normalize: True
+  shuffle: True
+  shuffle-seed: 1
+LMI:
+  model-config: supplementary-experiment-setups/data-driven/models/CoPhIR-100k-K-Means-model.yml
+  # used only in Unsupervised LMI (in Sup. the nunmber of levels is determined by the original labels)
+  n_levels: 2
+  training-dataset-percentage: 1
+
+## Experiment log dirs
+experiment:
+  gt-subdir: ground-truths
+  output-dir: outputs
+  # defined as the percentages of the dataset size (1 being 100%)
+  search-stop-conditions: [0.0005, 0.001, 0.003, 0.005, 0.01, 0.05, 0.1, 0.2, 0.3, 0.5]
+  knns: 30
+  queries-out-of-dataset: False
