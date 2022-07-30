@@ -1,0 +1,96 @@
+level-0:
+  epochs: 20
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-1:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-2:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-3:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-4:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-5:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-6:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam
+level-7:
+  epochs: 5
+  hidden_layers:
+    dense:
+    - activation: relu
+      dropout: null
+      regularizer: true
+      units: 100
+  learning_rate: 0.001
+  loss: sparse_categorical_crossentropy
+  model: NN
+  optimizer: adam

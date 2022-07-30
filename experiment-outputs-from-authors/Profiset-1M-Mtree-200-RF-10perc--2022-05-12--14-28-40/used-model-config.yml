@@ -1,0 +1,20 @@
+level-0:
+  max_depth: 25
+  model: RF
+  n_estimators: 200
+level-1:
+  max_depth: 15
+  model: RF
+  n_estimators: 200
+level-2:
+  max_depth: 15
+  model: RF
+  n_estimators: 200
+level-3:
+  max_depth: 15
+  model: RF
+  n_estimators: 200
+level-4:
+  max_depth: 15
+  model: RF
+  n_estimators: 200
