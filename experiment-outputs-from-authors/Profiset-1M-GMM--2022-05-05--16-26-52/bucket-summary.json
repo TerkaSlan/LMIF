@@ -1,0 +1,5 @@
+{
+    "n_buckets": 10000,
+    "mean_bucket_occupancy": 100.0,
+    "std_bucket_occupancy": 42.96827899741855
+}

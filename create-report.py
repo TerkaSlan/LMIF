@@ -14,7 +14,7 @@ from lmi.utils import load_json, get_logger_config
 import logging
 import sys
 
-DIR = './outputs/'
+DIR = './outputs'
 MODEL_NAMES = MODELS + MTREE + MINDEX + ['GMM']
 logging.basicConfig(level=logging.INFO, format=get_logger_config())
 LOG = logging.getLogger(__name__)
@@ -99,17 +99,19 @@ def plot_basic_exp_fig(fig_enum: Enum):
 
     Saves
     -------
-    outputs/`combination`.png : for basic experiment setups (Figures 5, 6 in [1])
+    DIR/`combination`.png : for basic experiment setups (Figures 5, 6 in [1])
     """
+    figures = []
     for combination in get_combinations(fig_enum):
-        experiment_dirs_to_plot = [f'{DIR}{e}' for e in get_relevant_experiment_files_basic_figures(combination)]
+        experiment_dirs_to_plot = [f'{DIR}/{e}' for e in get_relevant_experiment_files_basic_figures(combination)]
         model_names = get_model_names(experiment_dirs_to_plot)
         log_used_exp_files(combination, experiment_dirs_to_plot)
         plot = Plot(
             experiment_dirs_to_plot
         )
         plot.get_experiment_infos(model_names)
-        plot.plot_experiments(save=True, filename=combination, dir_to_save_to='outputs/')
+        figures.append(plot.plot_experiments(save=True, filename=combination, dir_to_save_to=DIR))
+    return figures
 
 
 def plot_mocap():
@@ -122,7 +124,7 @@ def plot_mocap():
 
     Saves
     -------
-    outputs/`combination`.png : for basic experiment setups
+    DIR/`combination`.png : for basic experiment setups
     """
     experiment_dirs_to_plot = []
     for combination in get_combinations(Mocap):
@@ -135,10 +137,10 @@ def plot_mocap():
         experiment_dirs_to_plot
     )
     plot.get_experiment_infos(model_names)
-    plot.plot_experiments(
+    return plot.plot_experiments(
         save=True,
         filename=Mocap.__name__,
-        dir_to_save_to='outputs/',
+        dir_to_save_to=DIR,
         x_ticks=[500, 10_000, 30_000, 50_000, 100_000]
     )
 
@@ -148,22 +150,24 @@ def plot_gmm_fig():
 
     Saves
     -------
-    outputs/`combination`.png : for basic experiment setups
+    DIR/`combination`.png : for basic experiment setups
     """
+    plotted_experiments = []
     for combinations in [
         get_combinations(GMMMtree) + get_combinations(GMMCoPhIR),
         get_combinations(GMMMindex) + get_combinations(GMMProfiset)
     ]:
         experiment_dirs_to_plot = []
         for combination in combinations:
-            experiment_dirs_to_plot.extend([f'{DIR}{e}' for e in get_relevant_experiment_files_gmm(combination)])
+            experiment_dirs_to_plot.extend([f'{DIR}/{e}' for e in get_relevant_experiment_files_gmm(combination)])
             log_used_exp_files(combination, experiment_dirs_to_plot)
         model_names = get_model_names(experiment_dirs_to_plot)
         plot = Plot(
             experiment_dirs_to_plot
         )
         plot.get_experiment_infos(model_names)
-        plot.plot_experiments(save=True, filename=combination, dir_to_save_to='outputs/')
+        plotted_experiments.append(plot.plot_experiments(save=True, filename=combination, dir_to_save_to=DIR))
+    return plotted_experiments
 
 
 def reorder_matched_files(results: List[str]) -> List[str]:
@@ -189,8 +193,9 @@ def plot_boxplot_figures(
 
     Saves
     -------
-    outputs/`combination`.png : for basic experiment setups
+    DIR/`combination`.png : for basic experiment setups
     """
+    plotted_experiments = []
     for exp_enum, l_loc in zip(relevant_enums, legend_loc):
         combinations = get_combinations(exp_enum)
         models = regex_model_names([c[:-1] if c.endswith('-') else c for c in combinations])
@@ -215,16 +220,20 @@ def plot_boxplot_figures(
             search = pd.read_csv(f'{DIR}/{t}/search.csv')
             scores_b.append(search[search['condition'] == 50_000]['knn_score'].values)
 
-        plot_boxplots(
-            scores_a,
-            scores_b,
-            ticks,
-            labels=labels,
-            legend_loc=l_loc,
-            save=True,
-            filename=f'{group_identifier}-{exp_enum.__name__}',
-            dir_to_save_to='outputs/'
-        )
+        if len(scores_a) > 0 or len(scores_b) > 0:
+            plotted_experiments.append(
+                plot_boxplots(
+                    scores_a,
+                    scores_b,
+                    ticks,
+                    labels=labels,
+                    legend_loc=l_loc,
+                    save=True,
+                    filename=f'{group_identifier}-{exp_enum.__name__}',
+                    dir_to_save_to=DIR
+                )
+            )
+    return plotted_experiments
 
 
 def table1():
@@ -232,20 +241,21 @@ def table1():
 
     Saves
     -------
-    outputs/table-1.html
+    DIR/table-1.html
     """
     col_names = get_combinations(Table1)
     index_names = get_combinations(IndexTable1)
-    df = pd.DataFrame(np.random.uniform(low=-1, high=0, size=(4, 16)), index=index_names, columns=col_names)
+    df = pd.DataFrame(np.nan, index=index_names, columns=col_names)
 
     for basic_enum in [BasicMtree, BasicMindex]:
         for combination in get_combinations(basic_enum):
             models = regex_model_names(MODELS_TABLES)
             res = [
-                f'{DIR}{exp_file}' for exp_file in get_files_in_dir()
+                f'{DIR}/{exp_file}' for exp_file in get_files_in_dir()
                 if re.match(f'^{combination}-{models}--.*$', exp_file)
             ]
             model_names = get_model_names(res, target_model_names=MODELS_TABLES)
+
             for model_name, filename in zip(model_names, res):
                 hw_info = load_json(f'{filename}/summary.json')['hw_info']
                 times = pd.read_csv(f'{filename}/times.csv')
@@ -257,27 +267,29 @@ def table1():
                     'memory (gb)-'+combination.split('-')[0], table_model_name
                 ] = round(hw_info['mem_train'] / 1024, 2)
 
-    df.to_html(os.path.join(DIR, 'table-1.html'))
+    if any(df.notnull().any().values):
+        df.to_html(os.path.join(DIR, 'table-1.html'))
 
 
-def table3(save_to=DIR):
+def table3():
     """ Creates Table 3 from [1].
 
     Saves
     -------
-    outputs/table-3.html
+    DIR/table-3.html
     """
     col_names = get_combinations(Table3)
     index_names = get_combinations(IndexTable3)
-    df = pd.DataFrame(np.random.uniform(low=-1, high=0, size=(4, 8)), index=index_names, columns=col_names)
+    df = pd.DataFrame(np.nan, index=index_names, columns=col_names)
 
     for combination in ['CoPhIR-1M-Mindex-2000', 'Profiset-1M-Mtree-200']:
         models = regex_model_names(MODELS)
         res = [
-            f'{DIR}{exp_file}' for exp_file in get_files_in_dir()
+            f'{DIR}/{exp_file}' for exp_file in get_files_in_dir()
             if re.match(f'^{combination}-{models}(-10perc|)--.*$', exp_file)
         ]
         model_names = get_model_names(res)
+        print(f'Table 3 -- res: {res}')
         for model_name, filename in zip(model_names, res):
             suffix = '10%' if '10perc' in filename else '100%'
             hw_info = load_json(f'{filename}/summary.json')['hw_info']
@@ -286,13 +298,19 @@ def table3(save_to=DIR):
             df.loc['build t. (h)-'+suffix, table_model_name] = round(times.iloc[0][' training'] / 60 / 60, 2)
             df.loc['memory (gb)-'+suffix, table_model_name] = round(hw_info['mem_train'] / 1024, 2)
 
-    df.to_html(os.path.join(save_to, 'table-3.html'))
+    if any(df.notnull().any().values):
+        df.to_html(os.path.join(DIR, 'table-3.html'))
+
+
+def uncomment_html(str_to_uncomment):
+    return str_to_uncomment.replace('<!--', '').replace('-->', '')
 
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         DIR = sys.argv[1]
 
+    generated_figures = []
     # table 1
     LOG.info("Creating 'Table 1'")
     table1()
@@ -300,45 +318,55 @@ if __name__ == '__main__':
     LOG.info("Creating 'Table 3'")
     table3()
     # figure 5
-    plot_basic_exp_fig(BasicMtree)
+    generated_figures.extend(plot_basic_exp_fig(BasicMtree))
     # figure 6
     LOG.info("Creating 'Figure 6'")
-    plot_basic_exp_fig(BasicMindex)
+    generated_figures.extend(plot_basic_exp_fig(BasicMindex))
     # figure 7
     LOG.info("Creating 'Figure 7'")
-    plot_gmm_fig()
+    generated_figures.extend(plot_gmm_fig())
     # figure 8
     LOG.info("Creating 'Figure 8'")
-    plot_boxplot_figures([Mindex10perc, Mtree10perc], '10perc', ['100% data', '10% data'])
+    generated_figures.extend(plot_boxplot_figures([Mindex10perc, Mtree10perc], '10perc', ['100% data', '10% data']))
     # figure 9
     LOG.info("Creating 'Figure 9'")
-    plot_boxplot_figures(
-        [MindexOOD, MtreeOOD],
-        'ood',
-        ['from dataset', 'out-of-dataset'],
-        legend_loc=['lower right', 'upper right']
+    generated_figures.extend(
+        plot_boxplot_figures(
+            [MindexOOD, MtreeOOD],
+            'ood',
+            ['from dataset', 'out-of-dataset'],
+            legend_loc=['lower right', 'upper right']
+        )
     )
     # figure 10
     LOG.info("Creating 'Figure 10'")
-    plot_mocap()
+    generated_figures.append(plot_mocap())
 
     if isfile(f'{DIR}/report-template.html'):
-        with open(f'{DIR}/table-1.html', 'r') as fd_tab_1:
-            table_1_html = fd_tab_1.read()
-
-        with open(f'{DIR}/table-3.html', 'r') as fd_tab_3:
-            table_3_html = fd_tab_3.read()
-
         with open(f'{DIR}/report-template.html', 'r') as f:
             report_html = f.read()
-
-        report_html = report_html.replace('{{ table-1 }}', table_1_html)
-        report_html = report_html.replace('{{ table-3 }}', table_3_html)
-
-        with open(f'{DIR}/report.html', 'w') as f:
-            f.write(report_html)
-
+        with open(f'{DIR}/report-template.html', 'r') as f:
+            report_html_lines = f.readlines()
     else:
         LOG.warn(f"Did not find 'report.html' in '{DIR}', could not generate the html report.")
+        exit(1)
 
-    LOG.info('Finished')
+    for table in ['table-1', 'table-3']:
+        if isfile(f'{DIR}/{table}.html'):
+            with open(f'{DIR}/{table}.html', 'r') as fd_tab:
+                table_html = fd_tab.read()
+            table_n = table.split('-')[-1]
+            html_str = f'<!-- table-{table_n} -->'
+            report_html = report_html.replace(html_str, uncomment_html(html_str))
+            report_html = report_html.replace(uncomment_html(html_str), table_html)
+
+    for generated_figure in generated_figures:
+        if generated_figure is not None and isfile(generated_figure):
+            for line in report_html_lines:
+                if generated_figure.split('/')[-1] in line:
+                    report_html = report_html.replace(line, uncomment_html(line))
+
+    with open(f'{DIR}/report.html', 'w') as f:
+        f.write(report_html)
+
+    LOG.info('Finished report generating.')

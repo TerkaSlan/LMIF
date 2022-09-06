@@ -1,0 +1,244 @@
+<html>
+<head>   
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        body {
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: right;
+        }
+        table tr {
+            border-bottom: 1px solid
+        }
+        table th, table td {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Reproducibility report</h1>
+
+<h2>Table 1</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mtree-2000-LR</th>
+      <th>Mtree-2000-NN</th>
+      <th>Mtree-2000-multilabel-NN</th>
+      <th>Mtree-2000-RF</th>
+      <th>Mtree-200-LR</th>
+      <th>Mtree-200-NN</th>
+      <th>Mtree-200-multilabel-NN</th>
+      <th>Mtree-200-RF</th>
+      <th>Mindex-2000-LR</th>
+      <th>Mindex-2000-NN</th>
+      <th>Mindex-2000-multilabel-NN</th>
+      <th>Mindex-2000-RF</th>
+      <th>Mindex-200-LR</th>
+      <th>Mindex-200-NN</th>
+      <th>Mindex-200-multilabel-NN</th>
+      <th>Mindex-200-RF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>build t. (h)-CoPhIR</th>
+      <td>0.19</td>
+      <td>0.21</td>
+      <td>1.58</td>
+      <td>3.17</td>
+      <td>0.29</td>
+      <td>0.39</td>
+      <td>3.24</td>
+      <td>3.62</td>
+      <td>8.39</td>
+      <td>1.21</td>
+      <td>5.27</td>
+      <td>9.74</td>
+      <td>56.49</td>
+      <td>27.57</td>
+      <td>9.81</td>
+      <td>28.30</td>
+    </tr>
+    <tr>
+      <th>build t. (h)-Profiset</th>
+      <td>2.82</td>
+      <td>2.70</td>
+      <td>4.24</td>
+      <td>3.41</td>
+      <td>1.49</td>
+      <td>2.57</td>
+      <td>3.46</td>
+      <td>8.96</td>
+      <td>5.35</td>
+      <td>0.46</td>
+      <td>7.88</td>
+      <td>5.03</td>
+      <td>32.75</td>
+      <td>14.14</td>
+      <td>3.93</td>
+      <td>41.62</td>
+    </tr>
+    <tr>
+      <th>memory (gb)-CoPhIR</th>
+      <td>0.01</td>
+      <td>2.10</td>
+      <td>4.81</td>
+      <td>13.41</td>
+      <td>4.92</td>
+      <td>2.79</td>
+      <td>5.53</td>
+      <td>33.66</td>
+      <td>1.72</td>
+      <td>0.43</td>
+      <td>121.95</td>
+      <td>182.21</td>
+      <td>2.06</td>
+      <td>15.35</td>
+      <td>163.82</td>
+      <td>238.18</td>
+    </tr>
+    <tr>
+      <th>memory (gb)-Profiset</th>
+      <td>17.58</td>
+      <td>1.28</td>
+      <td>8.86</td>
+      <td>33.35</td>
+      <td>10.63</td>
+      <td>127.68</td>
+      <td>45.07</td>
+      <td>44.39</td>
+      <td>21.61</td>
+      <td>1.67</td>
+      <td>22.14</td>
+      <td>24.14</td>
+      <td>20.80</td>
+      <td>49.36</td>
+      <td>11.71</td>
+      <td>190.35</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Table 3</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CoPhIR-Mindex-2000-LR</th>
+      <th>CoPhIR-Mindex-2000-NN</th>
+      <th>CoPhIR-Mindex-2000-multilabel-NN</th>
+      <th>CoPhIR-Mindex-2000-RF</th>
+      <th>Profiset-Mtree-200-LR</th>
+      <th>Profiset-Mtree-200-NN</th>
+      <th>Profiset-Mtree-200-multilabel-NN</th>
+      <th>Profiset-Mtree-200-RF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>build t. (h)-100%</th>
+      <td>8.39</td>
+      <td>1.21</td>
+      <td>5.27</td>
+      <td>9.74</td>
+      <td>1.49</td>
+      <td>2.57</td>
+      <td>3.46</td>
+      <td>8.96</td>
+    </tr>
+    <tr>
+      <th>build t. (h)-10%</th>
+      <td>0.20</td>
+      <td>0.09</td>
+      <td>0.35</td>
+      <td>0.56</td>
+      <td>0.54</td>
+      <td>1.16</td>
+      <td>0.77</td>
+      <td>1.13</td>
+    </tr>
+    <tr>
+      <th>memory (gb)-100%</th>
+      <td>1.72</td>
+      <td>0.43</td>
+      <td>121.95</td>
+      <td>182.21</td>
+      <td>10.63</td>
+      <td>127.68</td>
+      <td>45.07</td>
+      <td>44.39</td>
+    </tr>
+    <tr>
+      <th>memory (gb)-10%</th>
+      <td>4.02</td>
+      <td>4.43</td>
+      <td>4.14</td>
+      <td>22.10</td>
+      <td>16.48</td>
+      <td>48.64</td>
+      <td>36.84</td>
+      <td>21.15</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Figure 5</h2>
+<h4>CoPhIR Mtree 2000</h4>
+<img src='CoPhIR-1M-Mtree-2000time-recall-stopcond-recall.png' width="1200">
+
+<h4>CoPhIR Mtree 200</h4>
+<img src='CoPhIR-1M-Mtree-200time-recall-stopcond-recall.png' width="1200">
+
+<h4>Profiset Mtree 2000</h4>
+<img src='Profiset-1M-Mtree-2000time-recall-stopcond-recall.png' width="1200">
+
+<h4>Profiset Mtree 200</h4>
+<img src='Profiset-1M-Mtree-200time-recall-stopcond-recall.png' width="1200">
+
+<h2>Figure 6</h2>
+<h4>CoPhIR Mindex 2000</h4>
+<img src='CoPhIR-1M-Mindex-2000time-recall-stopcond-recall.png' width="1200">
+
+<h4>CoPhIR Mindex 200</h4>
+<img src='CoPhIR-1M-Mindex-200time-recall-stopcond-recall.png' width="1200">
+
+<h4>Profiset Mindex 2000</h4>
+<img src='Profiset-1M-Mindex-2000time-recall-stopcond-recall.png' width="1200">
+
+<h4>Profiset Mindex 200</h4>
+<img src='Profiset-1M-Mindex-200time-recall-stopcond-recall.png' width="1200">
+
+<h2>Figure 7</h2>
+<h4>CoPhIR</h4>
+<img src='CoPhIR-1M-GMMtime-recall-stopcond-recall.png' width="1200">
+
+<h4>Profiset</h4>
+<img src='Profiset-1M-GMMtime-recall-stopcond-recall.png' width="1200">
+
+<h2>Figure 8</h2>
+<h4>CoPhIR M-index 2000</h4>
+<img src='10perc-Mindex10percboxplots.png' width="400">
+
+<h4>Profiset M-tree 200</h4>
+<img src='10perc-Mtree10percboxplots.png' width="400">
+
+<h2>Figure 9</h2>
+<h4>CoPhIR M-index 2000</h4>
+<img src='ood-MindexOODboxplots.png' width="400">
+
+<h4>Profiset M-tree 200</h4>
+<img src='ood-MtreeOODboxplots.png' width="400">
+
+<h2>Figure 10</h2>
+<h4>MOCAP M-index 2000</h4>
+<img src='Mocaptime-recall-stopcond-recall.png' width="1200">
+
+</body>
+</html>

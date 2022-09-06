@@ -1,0 +1,30 @@
+LMI:
+  model-config: experiment-setups/basic/models/CoPhIR-1M-multilabel-NN-model.yml
+  training-dataset-percentage: 1
+data:
+  data-dir: /storage/brno12-cerit/home/tslaninakova/data/
+  dataset: COPHIR
+  dataset-size: 1M
+  normalize: true
+  original:
+    index: MTREE
+    leaf-node-capacity: 2000
+  shuffle: true
+  shuffle-seed: 1
+experiment:
+  gt-subdir: ground-truths
+  knns: 30
+  output-dir: outputs
+  queries-out-of-dataset: false
+  search-stop-conditions:
+  - 0.0005
+  - 0.001
+  - 0.003
+  - 0.005
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.5
+setup: exp-basic

@@ -1,0 +1,264 @@
+[2022-07-25 13:02:12,827][INFO ][lmi.data.DataLoader] Loading CoPhIR dataset from data/datasets/CoPhIR1M-descriptors.csv.
+[2022-07-25 13:18:03,389][INFO ][__main__] Running an experiment with LR using experiment-setups/basic/CoPhIR-1M-Mtree-2000-LR.yml
+[2022-07-25 13:18:15,925][INFO ][__main__] Consumed memory [data loading] (MB): 10.28125
+[2022-07-25 13:18:15,996][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-25 21:51:45,701][INFO ][lmi.indexes.BaseInde] Training level 1 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-25 23:51:58,235][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-25 23:51:58,265][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-25 23:52:12,202][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-25 23:52:25,876][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-25 23:52:39,450][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-25 23:52:52,492][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-25 23:53:05,706][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-25 23:53:18,744][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-25 23:53:32,456][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-25 23:53:46,040][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-25 23:53:59,109][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-25 23:54:12,340][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mtree-2000-LR--2022-07-25--13-18-15/search.csv'
+[2022-07-25 23:54:12,359][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 0.796875
+[2022-07-25 23:54:14,900][INFO ][__main__] Running an experiment with NN using experiment-setups/basic/CoPhIR-1M-Mtree-2000-NN.yml
+[2022-07-25 23:54:27,092][INFO ][__main__] Consumed memory [data loading] (MB): 11.08984375
+[2022-07-25 23:54:27,155][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learn
+ing_rate': 0.0001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+2022-07-25 23:54:27.270774: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-07-25 23:54:27.336837: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194840000 Hz
+2022-07-25 23:54:27.341103: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ce93fcccc0 executing computations on platform Host. Devices:
+2022-07-25 23:54:27.341195: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-07-25 23:54:29.141292: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+2022-07-26 00:04:03.741397: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+[2022-07-26 00:05:07,514][INFO ][lmi.indexes.BaseInde] Training level 1 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-26 00:14:22,588][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-26 00:14:22,612][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-26 00:15:47,330][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-26 00:17:10,975][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-26 00:18:38,788][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-26 00:20:05,254][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-26 00:21:31,707][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-26 00:22:59,996][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-26 00:24:29,345][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-26 00:25:54,410][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-26 00:27:23,561][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-26 00:28:45,391][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mtree-2000-NN--2022-07-25--23-54-27/search.csv'
+[2022-07-26 00:28:45,406][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 5715.70703125
+[2022-07-26 00:28:56,772][INFO ][__main__] Running an experiment with LR using experiment-setups/basic/CoPhIR-1M-Mtree-200-LR.yml
+[2022-07-26 00:29:15,940][INFO ][__main__] Consumed memory [data loading] (MB): 11.9296875
+[2022-07-26 00:29:16,002][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'max_iter': 10, 'C': 10000, 'model': 'LogReg', 'single-point-node': 'DecisionTree', 'class_weights': True}.
+[2022-07-26 05:20:57,690][INFO ][lmi.indexes.BaseInde] Training level 1 with {'max_iter': 10, 'C': 10000, 'model': 'LogReg', 'single-point-node': 'DecisionTree', 'class_weights': True}.
+[2022-07-26 09:22:28,456][INFO ][lmi.indexes.BaseInde] Training level 2 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg', 'single-point-node': 'DecisionTree', 'class_weights': True}.
+[2022-07-26 09:50:58,719][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-26 09:50:58,747][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-26 09:54:53,108][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-26 09:58:54,855][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-26 10:03:07,018][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-26 10:07:15,701][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-26 10:11:18,431][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-26 10:15:18,512][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-26 10:19:22,114][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-26 10:23:27,881][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-26 10:27:23,359][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-26 10:31:14,126][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mtree-200-LR--2022-07-26--00-29-15/search.csv'
+[2022-07-26 10:31:14,146][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 0.8046875
+[2022-07-26 10:31:16,386][INFO ][__main__] Running an experiment with NN using experiment-setups/basic/CoPhIR-1M-Mtree-200-NN.yml
+[2022-07-26 10:31:35,464][INFO ][__main__] Consumed memory [data loading] (MB): 12.01953125
+[2022-07-26 10:31:35,533][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learn
+ing_rate': 0.0001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+2022-07-26 10:31:35.586382: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-07-26 10:31:35.600516: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194840000 Hz
+2022-07-26 10:31:35.602372: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ce93fcccc0 executing computations on platform Host. Devices:
+2022-07-26 10:31:35.602454: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-07-26 10:31:37.317484: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+2022-07-26 10:41:21.852113: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+[2022-07-26 10:42:26,043][INFO ][lmi.indexes.BaseInde] Training level 1 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-26 10:51:58,671][INFO ][lmi.indexes.BaseInde] Training level 2 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-26 11:06:21,349][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-26 11:06:21,380][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-26 11:30:08,805][INFO ][__main__] Running an experiment with LR using experiment-setups/basic/CoPhIR-1M-Mindex-2000-LR.yml
+[2022-07-26 11:30:25,189][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-26 11:30:25,265][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-27 12:36:26,437][INFO ][lmi.indexes.BaseInde] Training level 1 with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-27 16:04:56,005][INFO ][lmi.indexes.BaseInde] Training level 2 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-27 20:46:30,392][INFO ][lmi.indexes.BaseInde] Training level 3 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-27 22:58:45,782][INFO ][lmi.indexes.BaseInde] Training level 4 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-27 23:08:44,804][INFO ][lmi.indexes.BaseInde] Training level 5 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-27 23:13:34,372][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-27 23:13:34,414][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-27 23:17:01,829][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-27 23:20:31,848][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-27 23:24:02,726][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-27 23:27:30,488][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-27 23:31:02,315][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-27 23:34:36,989][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-27 23:38:07,336][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-27 23:41:39,170][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-27 23:45:07,313][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-27 23:48:41,915][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mindex-2000-LR--2022-07-26--11-30-25/search.csv'
+[2022-07-27 23:48:41,955][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 0.97265625
+[2022-07-27 23:48:44,166][INFO ][__main__] Running an experiment with NN using experiment-setups/basic/CoPhIR-1M-Mindex-2000-NN.yml
+[2022-07-27 23:48:59,201][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-27 23:48:59,279][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'epochs': 1, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learn
+ing_rate': 0.0001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+2022-07-27 23:48:59.400550: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-07-27 23:48:59.470102: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194840000 Hz
+2022-07-27 23:48:59.474327: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ce93fcccc0 executing computations on platform Host. Devices:
+2022-07-27 23:48:59.474424: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-07-27 23:49:01.499920: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+2022-07-27 23:51:07.869948: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+[2022-07-27 23:52:17,316][INFO ][lmi.indexes.BaseInde] Training level 1 with {'epochs': 1, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learning_rate': 0.0001, 'loss': 'sparse
+_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-27 23:57:14,578][INFO ][lmi.indexes.BaseInde] Training level 2 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 00:37:25,618][INFO ][lmi.indexes.BaseInde] Training level 3 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 01:09:07,556][INFO ][lmi.indexes.BaseInde] Training level 4 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 01:13:12,397][INFO ][lmi.indexes.BaseInde] Training level 5 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 01:14:44,321][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-28 01:14:44,352][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-28 01:22:19,686][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-28 01:29:48,913][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-28 01:22:38,788][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-28 01:30:05,254][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-28 01:21:31,707][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-28 02:02:59,996][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-28 02:34:29,345][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-28 02:58:54,410][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-28 03:27:23,561][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-28 03:50:30,506][INFO ][__main__] Running an experiment with Mindex using experiment-setups/basic/CoPhIR-1M-Mindex-2000-Mindex.yml
+[2022-07-28 03:50:46,832][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-28 03:50:46,843][INFO ][lmi.data.DataLoader] Loading CoPhIR dataset from data//pivots/MIndex-CoPhIR-1M-descriptors.csv.
+[2022-07-28 03:50:47,677][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-28 03:53:15,299][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-28 03:55:44,153][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-28 03:58:17,040][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-28 04:00:46,528][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-28 04:03:15,125][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-28 04:05:41,450][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-28 04:08:06,358][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-28 04:10:31,014][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-28 04:12:58,870][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-28 04:15:28,818][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mindex-2000-Mindex--2022-07-28--03-50-46/search.csv'
+[2022-07-28 04:15:28,837][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 0
+[2022-07-28 04:15:30,920][INFO ][__main__] Running an experiment with RF using experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-RF-10perc.yml
+[2022-07-28 04:15:46,632][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-28 04:15:51,782][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(100000, 282) with {'model': 'RF', 'max_depth': 25, 'n_estimators': 200}.
+[2022-07-28 04:25:19,026][INFO ][__main__] Running an experiment with LR using experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-LR-10perc.yml
+[2022-07-28 04:25:36,148][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-28 04:25:41,773][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(100000, 282) with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-28 07:12:23,042][INFO ][lmi.indexes.BaseInde] Training level 1 with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-28 07:19:02,334][INFO ][lmi.indexes.BaseInde] Training level 2 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-28 07:24:40,319][INFO ][lmi.indexes.BaseInde] Training level 3 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-28 07:26:47,257][INFO ][lmi.indexes.BaseInde] Training level 4 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-28 07:26:57,384][INFO ][lmi.indexes.BaseInde] Training level 5 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-28 07:27:04,907][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-28 07:27:04,949][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-28 07:28:42,288][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-28 07:30:19,074][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-28 07:31:57,234][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-28 07:33:36,474][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-28 07:35:18,201][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-28 07:36:57,345][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-28 07:38:36,239][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-28 07:40:17,106][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-28 07:41:54,569][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-28 07:43:36,071][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mindex-2000-LR-10perc--2022-07-28--04-25-36/search.csv'
+[2022-07-28 07:43:36,092][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 0.7890625
+[2022-07-28 07:43:38,326][INFO ][__main__] Running an experiment with NN using experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-NN-10perc.yml
+[2022-07-28 07:43:54,128][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-28 07:43:59,422][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(100000, 282) with {'epochs': 1, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learni
+ng_rate': 0.0001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+2022-07-28 07:43:59.522599: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-07-28 07:43:59.592022: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194840000 Hz
+2022-07-28 07:43:59.595958: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ce93fcccc0 executing computations on platform Host. Devices:
+2022-07-28 07:43:59.596029: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-07-28 07:44:23.708852: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2030400000 exceeds 10% of system memory.
+[2022-07-28 07:45:22,773][INFO ][lmi.indexes.BaseInde] Training level 1 with {'epochs': 1, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learning_rate': 0.0001, 'loss': 'sparse
+_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-28 07:48:08,059][INFO ][lmi.indexes.BaseInde] Training level 2 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 07:50:34,641][INFO ][lmi.indexes.BaseInde] Training level 3 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 07:50:56,015][INFO ][lmi.indexes.BaseInde] Training level 4 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 07:51:01,252][INFO ][lmi.indexes.BaseInde] Training level 5 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model'
+: 'NN', 'optimizer': 'adam'}.
+[2022-07-28 07:51:05,254][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-28 07:51:05,285][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-28 07:58:43,648][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-28 08:29:48,913][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-28 08:22:38,788][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-28 08:30:05,254][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-28 08:21:31,707][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-28 09:02:59,996][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-28 09:34:29,345][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-28 09:58:54,410][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-28 09:27:23,561][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-28 11:07:46,001][INFO ][__main__] Running an experiment with LR using experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-LR-ood.yml
+[2022-07-28 11:08:02,223][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-28 11:08:02,308][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-29 12:34:04,042][INFO ][lmi.indexes.BaseInde] Training level 1 with {'max_iter': 10, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-29 16:02:41,233][INFO ][lmi.indexes.BaseInde] Training level 2 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-29 20:38:23,694][INFO ][lmi.indexes.BaseInde] Training level 3 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-29 22:42:44,315][INFO ][lmi.indexes.BaseInde] Training level 4 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-29 22:52:15,782][INFO ][lmi.indexes.BaseInde] Training level 5 with {'max_iter': 5, 'C': 10000, 'model': 'LogReg'}.
+[2022-07-29 22:56:52,203][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-29 22:56:52,225][INFO ][lmi.data.DataLoader] Loading CoPhIR dataset from data//queries/queries-out-of-dataset/CoPhIR-queries-out-of-dataset-descriptors.csv.
+[2022-07-29 22:56:52,578][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-29 23:00:23,248][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-29 23:03:54,331][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-29 23:07:26,564][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-29 23:10:59,728][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-29 23:14:35,316][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-29 23:18:09,998][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-29 23:21:45,709][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-29 23:25:21,655][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-29 23:28:54,140][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-29 23:32:27,767][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-Mindex-2000-LR-ood--2022-07-28--11-08-02/search.csv'
+[2022-07-29 23:32:27,788][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 0.9296875
+[2022-07-29 23:32:30,127][INFO ][__main__] Running an experiment with NN using experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-NN-ood.yml
+[2022-07-29 23:32:45,213][INFO ][__main__] Consumed memory [data loading] (MB): 0
+[2022-07-29 23:32:45,290][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'epochs': 1, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learning_rate': 0.0001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+2022-07-29 23:32:45.415237: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-07-29 23:32:45.483788: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194840000 Hz
+2022-07-29 23:32:45.487420: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ce93fcccc0 executing computations on platform Host. Devices:
+2022-07-29 23:32:45.487482: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2022-07-29 23:32:47.453389: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+2022-07-29 23:34:59.129018: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2256000000 exceeds 10% of system memory.
+[2022-07-29 23:36:10,154][INFO ][lmi.indexes.BaseInde] Training level 1 with {'epochs': 1, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 282}, {'activation': 'relu', 'dropout': None, 'units': 128}]}, 'learning_rate': 0.0001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-29 23:41:10,145][INFO ][lmi.indexes.BaseInde] Training level 2 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-30 00:22:43,569][INFO ][lmi.indexes.BaseInde] Training level 3 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-30 00:51:43,926][INFO ][lmi.indexes.BaseInde] Training level 4 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-30 00:55:33,591][INFO ][lmi.indexes.BaseInde] Training level 5 with {'epochs': 5, 'hidden_layers': {'dense': [{'activation': 'relu', 'dropout': None, 'units': 100, 'regularizer': True}]}, 'learning_rate': 0.001, 'loss': 'sparse_categorical_crossentropy', 'model': 'NN', 'optimizer': 'adam'}.
+[2022-07-30 00:56:56,241][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-30 00:56:56,266][INFO ][lmi.data.DataLoader] Loading CoPhIR dataset from data//queries/queries-out-of-dataset/CoPhIR-queries-out-of-dataset-descriptors.csv.
+[2022-07-30 00:56:56,628][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-30 01:04:19,056][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-30 01:11:42,064][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-30 01:22:47,085][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-30 01:47:43,998][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-30 02:03:24,164][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-30 02:21:09,969][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-30 02:47:09,085][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-30 03:01:42,555][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-30 03:26:42,140][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-30 03:45:40,852][INFO ][__main__] Running an experiment with GMM using experiment-setups/data-driven/CoPhIR-1M-GMM.yml
+[2022-07-30 03:45:40,867][INFO ][__main__] Consumed memory [data loading] (MB): 0.0
+[2022-07-30 03:45:41,281][INFO ][lmi.indexes.BaseInde] Training model M.0 (root) on dataset(1000000, 282) with {'model': 'GMM', 'n_components': 100, 'covariance_type': 'spherical', 'max_iter': 5, 'init_params': 'kmeans'}.
+[2022-07-30 04:03:48,725][INFO ][lmi.indexes.BaseInde] Training level 1 with {'model': 'GMM', 'n_components': 100, 'covariance_type': 'spherical', 'max_iter': 5, 'init_params': 'kmeans'}.
+[2022-07-30 04:11:27,513][INFO ][lmi.indexes.BaseInde] Finished training the LMI.
+[2022-07-30 04:11:27,555][INFO ][lmi.Experiment] Starting the search for 1000 queries.
+[2022-07-30 04:12:24,164][INFO ][lmi.Experiment] Evaluated 100/1000 queries.
+[2022-07-30 04:13:22,108][INFO ][lmi.Experiment] Evaluated 200/1000 queries.
+[2022-07-30 04:14:19,762][INFO ][lmi.Experiment] Evaluated 300/1000 queries.
+[2022-07-30 04:15:17,140][INFO ][lmi.Experiment] Evaluated 400/1000 queries.
+[2022-07-30 04:16:13,195][INFO ][lmi.Experiment] Evaluated 500/1000 queries.
+[2022-07-30 04:17:10,383][INFO ][lmi.Experiment] Evaluated 600/1000 queries.
+[2022-07-30 04:18:10,923][INFO ][lmi.Experiment] Evaluated 700/1000 queries.
+[2022-07-30 04:19:10,534][INFO ][lmi.Experiment] Evaluated 800/1000 queries.
+[2022-07-30 04:20:09,969][INFO ][lmi.Experiment] Evaluated 900/1000 queries.
+[2022-07-30 04:21:06,685][INFO ][lmi.Experiment] Search is finished, results are stored in: 'outputs/CoPhIR-1M-GMM--2022-07-30--03-45-40/search.csv'
+[2022-07-30 04:21:06,708][INFO ][lmi.Experiment] Consumed memory by evaluating (MB): 1.05859375
+[2022-07-30 04:21:09,103][INFO ][__main__] Finished the experiment run: 2022-07-30--04-21-09

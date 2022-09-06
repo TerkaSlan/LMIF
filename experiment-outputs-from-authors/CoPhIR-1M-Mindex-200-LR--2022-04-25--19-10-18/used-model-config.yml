@@ -1,0 +1,32 @@
+level-0:
+  C: 10000
+  max_iter: 10
+  model: LogReg
+level-1:
+  C: 10000
+  max_iter: 10
+  model: LogReg
+level-2:
+  C: 10000
+  max_iter: 10
+  model: LogReg
+level-3:
+  C: 10000
+  max_iter: 5
+  model: LogReg
+level-4:
+  C: 10000
+  max_iter: 5
+  model: LogReg
+level-5:
+  C: 10000
+  max_iter: 5
+  model: LogReg
+level-6:
+  C: 10000
+  max_iter: 5
+  model: LogReg
+level-7:
+  C: 10000
+  max_iter: 5
+  model: LogReg

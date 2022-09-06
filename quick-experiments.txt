@@ -1,1 +1,13 @@
-experiment-setups/basic/CoPhIR-1M-Mtree-2000-LR.yml experiment-setups/basic/CoPhIR-1M-Mtree-2000-NN.yml experiment-setups/basic/CoPhIR-1M-Mtree-200-LR.yml experiment-setups/basic/CoPhIR-1M-Mtree-200-NN.yml experiment-setups/basic/CoPhIR-1M-Mindex-2000-LR.yml experiment-setups/basic/CoPhIR-1M-Mindex-2000-NN.yml experiment-setups/basic/CoPhIR-1M-Mindex-2000-Mindex.yml experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-RF-10perc.yml experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-LR-10perc.yml experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-NN-10perc.yml experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-LR-ood.yml experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-NN-ood.yml experiment-setups/data-driven/CoPhIR-1M-GMM.yml
+experiment-setups/basic/CoPhIR-1M-Mtree-2000-LR.yml
+experiment-setups/basic/CoPhIR-1M-Mtree-2000-NN.yml
+experiment-setups/basic/CoPhIR-1M-Mtree-200-LR.yml
+experiment-setups/basic/CoPhIR-1M-Mtree-200-NN.yml
+experiment-setups/basic/CoPhIR-1M-Mindex-2000-LR.yml
+experiment-setups/basic/CoPhIR-1M-Mindex-2000-NN.yml
+experiment-setups/basic/CoPhIR-1M-Mindex-2000-Mindex.yml
+experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-RF-10perc.yml
+experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-LR-10perc.yml
+experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-NN-10perc.yml
+experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-LR-ood.yml
+experiment-setups/preliminary/CoPhIR-1M-Mindex-2000-NN-ood.yml
+experiment-setups/data-driven/CoPhIR-1M-GMM.yml

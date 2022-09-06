@@ -86,9 +86,11 @@ def save_figure(fig, filename, dir_to_save_to, experiment_dirs=None):
     if not dir_to_save_to:
         for exp_dir in experiment_dirs:
             fig.savefig(f'{exp_dir}/{filename}.png')
+        return f'{exp_dir}/{filename}.png'
     else:
         create_dir(dir_to_save_to)
         fig.savefig(f'{dir_to_save_to}/{filename}.png')
+        return f'{dir_to_save_to}/{filename}.png'
 
 
 class Plot:
@@ -133,7 +135,7 @@ class Plot:
         save=False,
         filename='plot',
         dir_to_save_to=None,
-        x_ticks=[500, 50_000, 100_000, 200_000, 300_000, 500_000]
+        x_ticks=[500, 50_000, 100_000, 200_000, 300_000]
     ):
         """ Creates time-recall and stopcond-recall plots of connected scatterpoints.
 
@@ -146,10 +148,10 @@ class Plot:
         dir_to_save_to : str
             Directory to save to.
         """
-        fig, axs = plt.subplots(figsize=(15, 5), ncols=2, nrows=1)
+        fig, axs = plt.subplots(figsize=(12, 4), ncols=2, nrows=1)
         for i, (model, scores, times) in enumerate(zip(self.models, self.scores, self.times)):
 
-            fig, _ = create_single_plot(
+            fig, ax0 = create_single_plot(
                 fig,
                 axs[0],
                 x=self.stop_conditions,
@@ -160,7 +162,7 @@ class Plot:
                 line_label=model,
                 x_ticks=x_ticks
             )
-            fig, _ = create_single_plot(
+            fig, ax1 = create_single_plot(
                 fig,
                 axs[1],
                 x=times,
@@ -170,10 +172,11 @@ class Plot:
                 y_label='Recall',
                 line_label=model
             )
-        if save:
-            save_figure(fig, f'{filename}time-recall-stopcond-recall', dir_to_save_to, self.experiment_dirs)
-        else:
-            fig.show()
+        if len(self.models) != 0:
+            if save:
+                return save_figure(fig, f'{filename}time-recall-stopcond-recall', dir_to_save_to, self.experiment_dirs)
+            else:
+                fig.show()
 
 
 def plot_boxplots(
@@ -216,6 +219,6 @@ def plot_boxplots(
     plt.ylim(-0.01, 1.05)
     plt.grid(axis='y')
     if save:
-        save_figure(fig, f'{filename}boxplots', dir_to_save_to)
+        return save_figure(fig, f'{filename}boxplots', dir_to_save_to)
     else:
         fig.show()

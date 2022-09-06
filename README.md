@@ -52,13 +52,11 @@ $ unzip LMIF.zip
 
 ```shell
 $ # (4) Navigate to the source code directory and build the image:
-$ cd LMIF && docker build -t repro-lmi -f Dockerfile .
+$ cd LMIF && docker build -t repro-lmi -f Dockerfile . --network host
 $ # (5) Check if the `repro-lmi` image was successfully built by listing your docker images:
 $ docker images
-$ # (6) Navigate out of the `LMIF` directory and create an empty `outputs` directory, which we will map to the Docker image to store the experiment outputs on your local machine: 
-$ cd .. && mkdir outputs
-$ # (7) Start the interactive session and map the input and output directories from/to your local machine. Note that the full path to your current directory needs to be provided:
-$ docker run -it -v <full-path>/outputs:/learned-indexes/outputs -v <full-path>/datasets:/learned-indexes/data repro-lmi /bin/bash
+$ # (6) Start the interactive session and map the input and output directories from/to your local machine. Note that the full path to your current directory needs to be provided:
+$ docker run -it -v <full-path-host-machine>/LMIF/outputs:/learned-indexes/outputs -v <full-path-host-machine>/datasets:/learned-indexes/data repro-lmi /bin/bash
 ```
 
 #### Installation Method 2: Without docker 
@@ -74,10 +72,13 @@ $ pip install -r requirements.txt
 ---
 
 ```shell
-$ # (8) Run the experiments, save the log output
-$ python3 run-experiments.py experiment-setups/**/*.yml |& tee outputs/experiments-output.log
-$ # (9) Generate the report
-$ python3 create-report.py outputs/
+$ # (8) Run the quick experiments, generate the report
+$ python3 run-experiments.py `cat quick-experiments.txt` 2>&1 | tee outputs/experiments-quick.log
+$ python3 create-report.py
+$ # The partialoutput is in outputs/report.html
+$ # (9) Run the rest of the experiments
+$ python3 run-experiments.py `cat experiments.txt` 2>&1 | tee outputs/experiments.log
+$ python3 create-report.py
 ```
 Note that running all of the experiments is quite time and memory consuming, took us 74 days and 350GB RAM on a one-core Intel Xeon Gold 5120.
 
