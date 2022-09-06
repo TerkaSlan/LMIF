@@ -30,7 +30,7 @@ We also worked with students that used LMI for searching in text data and protei
 You can check out our [web application demonstrating our search](https://web.lmi.dyn.cloud.e-infra.cz/) on images and proteins chains.
 
 ### Dowload the data:
-Use our [Mendeley data repository](https://doi.org/10.17632/8wp73zxr47.3) to download the data `datasets.zip` and clone this repository or download `LMIF.zip` (they are identical).
+Use our [Mendeley data repository](https://doi.org/10.17632/8wp73zxr47.6) to download the data `datasets.zip` and clone this repository or download `LMIF.zip` (they are identical).
 
 ```shell
 $ # (1) On your local machine, navigate to the directory you want to use and download the datasets and source code:
