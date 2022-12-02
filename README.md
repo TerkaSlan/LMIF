@@ -1,7 +1,7 @@
 # Learned Metric Index Framework
 Learned Metric Index (`LMI`) is a ML-based index for computing approximate nearest neighbor queries in complex data.
 
-![GH-Repro-LMI-gif](img/GH-Repro-LMI-gif.gif)
+![workflow](./img/LMI-example-of-searching-steps-1.png)
 
 Contents
 ========
@@ -11,6 +11,7 @@ Contents
  * [Usage](#usage)
  * [Experiment configurations](#output-structure)
  * [Datasets](#datasets)
+ * [Workflow](#workflow)
 
 ### Introduction
 This framework was created as a reproducibility tool for our experiments in:
@@ -29,13 +30,13 @@ We also worked with students that used LMI for searching in text data and protei
 ### Searching in action:
 You can check out our [web application demonstrating our search](https://web.lmi.dyn.cloud.e-infra.cz/) on images and proteins chains.
 
-### Dowload the data:
-Use our [Mendeley data repository](https://doi.org/10.17632/8wp73zxr47.6) to download the data `datasets.zip` and clone this repository or download `LMIF.zip` (they are identical).
+### Dowload the data using Mendeley data: [https://data.mendeley.com/datasets/8wp73zxr47/6](https://data.mendeley.com/datasets/8wp73zxr47/6)
 
+### Unzip the data:
 ```shell
-$ # (1) On your local machine, navigate to the directory you want to use and download the datasets and source code:
-$ # (2) Extract the compressed input data files
-$ unzip datasets.zip
+$ # (1) navigate to the directory you want to use
+$ # (2) Extract the compressed input data files either manually or using the unzip command (if available)
+$ unzip data.zip
 $ # (3) Extract the compressed source code files
 $ unzip LMIF.zip
 ```
@@ -44,7 +45,6 @@ $ unzip LMIF.zip
 
 #### Prerequisites:
 1. Docker (ver. >=20.10.13)
-2. (Optional) `wget` and `unzip` commands. These are generally available in Linux and MacOS operation systems
 3. 45GB of storage space
 4. 300GB of main memory. This amount of memory is necessary to run all the experiments. If the reader wishes to run only some subset, less memory might be sufficient
 
@@ -75,19 +75,16 @@ $ pip install -r requirements.txt
 $ # (8) Run the quick experiments, generate the report
 $ python3 run-experiments.py `cat quick-experiments.txt` 2>&1 | tee outputs/experiments-quick.log
 $ python3 create-report.py
-$ # The partialoutput is in outputs/report.html
+$ # The partial output is in outputs/report.html
 $ # (9) Run the rest of the experiments
 $ python3 run-experiments.py `cat experiments.txt` 2>&1 | tee outputs/experiments.log
 $ python3 create-report.py
 ```
 Note that running all of the experiments is quite time and memory consuming, took us 74 days and 350GB RAM on a one-core Intel Xeon Gold 5120.
 
-You can also run alternative experiment setups, which are less memory and time demanding:
+Generate the report:
 ```shell
-$ # (8) Run the experiments, save the log output -- memory friendly run
-$ python3 run-experiments.py `cat quick-experiments.txt` |& tee outputs/experiments-quick.log
-$ # (8) Run the experiments, save the log output -- validation run
-$ python3 run-experiments-valid.py experiment-setups/**/*.yml |& tee test-outputs/experiments-validation.log
+$ python3 create-report.py outputs/
 ```
 
 ### Datasets
@@ -98,3 +95,15 @@ $ python3 run-experiments-valid.py experiment-setups/**/*.yml |& tee test-output
 CoPhIR   | 1M      | 284  | 0.748 |
 Profiset | 1M      | 4096 | 23    |
 MoCap    | 350k    | 4096 | 6.8   |       
+
+### Workflow
+---
+
+#### All of the experiments (65)
+
+![workflow](./img/all-experiments-workflow.png)
+
+
+#### A Single experiment
+
+![workflow](./img/single-experiment-workflow.png)

@@ -9,3 +9,4 @@ tensorflow==2.0.0
 faiss-cpu==1.7.0
 py-cpuinfo==8.0.0
 psutil==5.8.0
+jupyterlab==3.2.9
