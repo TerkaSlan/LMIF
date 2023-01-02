@@ -1,0 +1,50 @@
+Data:
+    distance_function: 'L2'
+    dataset: 'SIFT'
+    subset: 1_000_000
+    seed: 2022
+    queries_subset: 1_000
+
+LMI:
+    leaf_node_capacity_min: 100
+    leaf_node_capacity_max: 200
+    children_min: 5
+    children_max: 100
+    violating_nodes: 0
+
+Experiment:
+    stop_conditions:
+    - 0.0005
+    - 0.001
+    - 0.003
+    - 0.005
+    - 0.01
+    - 0.03
+    - 0.05
+    - 0.1
+    - 0.2
+    - 0.3
+    stop_conditions_absolute:
+    - 1
+    - 3
+    - 5
+    - 10
+    - 13
+    - 15
+    - 20
+    - 23
+    - 25
+    - 30
+    stop_conditions_time:
+    - 0.0001
+    - 0.0003
+    - 0.0005
+    - 0.001
+    - 0.003
+    - 0.005
+    - 0.01
+    - 0.03
+    - 0.05
+    - 0.1
+    - 0.3
+    - 0.5
